@@ -13,22 +13,24 @@
 <body>
     <div class="container">
         <h1>Task Manager</h1>
-        
         <div class="input-group">
             <input type="text" id="taskInput" placeholder="Add Task">
-            <input type="text" id="descriptionInput" placeholder="Task Description">
             <select id="statusInput">
                 <option value="pending">Pending</option>
                 <option value="in-progress">In Progress</option>
                 <option value="completed">Completed</option>
             </select>
             <button onclick="addTask()">Add Task</button>
+            
+            
         </div>
+        <textarea id="descriptionInput" placeholder="Task Description"></textarea>
 
         <div class="search-group">
             <input type="text" id="searchInput" placeholder="Search tasks" onkeyup="searchTasks()">
             <input type="text" id="selectInput" placeholder="Select task by ID">
             <button onclick="selectTask()">Select Task</button>
+            <button id="clearButton" onclick="clearSearch()">Clear Search</button>
         </div>
 
         <div id="taskList"></div>
