@@ -52,4 +52,8 @@ body {
     font-weight: 600;
     font-family: monospace;
   }
-  
+  button:hover {
+    opacity: 0.9;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(78, 48, 212, 0.2);
+  }
