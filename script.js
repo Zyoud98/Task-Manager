@@ -63,4 +63,14 @@ function saveTasks() {
       taskList.appendChild(card);
     });
   }
-
+  function toggleComplete(taskId) {
+    tasks = tasks.map(task => {
+      if (task.id === taskId) {
+        const newStatus = task.completed ? 'pending' : 'completed';
+        return { ...task, completed: !task.completed, status: newStatus };
+      }
+      return task;
+    });
+    saveTasks();
+    renderTasks();
+  }
