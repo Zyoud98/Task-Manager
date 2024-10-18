@@ -26,7 +26,7 @@ function addTask() {
 
     taskInput.value = '';
     descriptionInput.value = '';
-    statusInput.value = 'pending';
+    statusInput.value = 'in-progress';
   }
 }
 
@@ -47,11 +47,11 @@ function renderTasks(filteredTasks = tasks) {
     
     card.innerHTML = `
       <div class="task-content">
-        <button class="toggle-btn" onclick="toggleComplete('${task.id}')">${task.completed ? '&check;' : '&#8987;'}</button>
+        <button class="toggle-btn" onclick="toggleComplete('${task.id}')"> ${task.completed ? '&check;' : '&#8987;'}</button>
         <div class="task-details">
           <span class="task-text" title="${task.text}">${task.text}</span>
-          <p class="task-description" title="${task.description}">${task.description}</p>
           <p class="task-status">${task.status} </p>
+          <p class="task-description" title="${task.description}">Description: ${task.description}</p>
           <p class="task-id">ID: ${task.id}</p>
         </div>
       </div>
