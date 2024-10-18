@@ -141,3 +141,75 @@ body {
     color: white;
     transform: translateY(4px);
   }
+  .task-card.completed .toggle-btn {
+    background-color: #15ff00;
+    color: white;
+  }
+  .task-card.pending .toggle-btn {
+    background-color: red;
+    color: white;
+  }
+  .task-card.in-progress .toggle-btn {
+    background-color: orange;
+    color: white;
+  
+  }
+  .task-card.completed .task-text {
+    text-decoration: line-through;
+    color: #888;
+  }
+  .task-card.completed .task-status {
+    font-size: 20px;
+    font-weight:800;
+    color: green;
+  
+  
+  }
+  .task-card.pending .task-status {
+    font-size: 20px;
+    font-weight:800;
+    color: red;
+  
+  }
+  .task-card.in-progress .task-status {
+    font-size: 20px;
+    font-weight:800;
+    color: orange;
+  
+  }
+  
+  .task-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  .update-btn {
+    background-color: #4caf50;
+    color: white;
+    margin-left: 0px;
+    margin-right: 25px;
+    
+  }
+  
+  .delete-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .update-btn:hover, .delete-btn:hover {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+  
+  .task-card.pending {
+    border-left: 5px solid #ff0000;
+  }
+  
+  .task-card.in-progress {
+    border-left: 5px solid orange;
+  }
+  
+  .task-card.completed {
+    border-left: 5px solid #4caf50;
+  }
+
