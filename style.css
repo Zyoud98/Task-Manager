@@ -1,6 +1,7 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f0f4f8;
+    background: rgb(245,245,220);
+  background: radial-gradient(circle, rgba(245,245,220,1) 31%, rgba(192,192,192,1) 100%);
     margin: 0;
     padding: 20px;
     color: #333;
@@ -8,8 +9,8 @@ body {
   .container {
     max-width: 900px;
     margin: 0 auto;
-    background-color: #ffffff;
-    padding: 40px;
+    background-color: #C0C0C0;
+     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
@@ -102,6 +103,8 @@ body {
     flex-direction: column;
     flex-grow: 1;
     overflow: hidden;
+    
+    
   }
   .task-details {
     overflow-y: auto; 
@@ -118,6 +121,7 @@ body {
     display: block;
     word-wrap: break-word; 
     margin-top: 10px;
+    font-family:cursive ;
   }
   
   .task-description {
@@ -336,4 +340,13 @@ body {
 
 .task-details::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+.copy-right{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+  font-size: 12px;
+  font-family: monospace;
+
+
 }
