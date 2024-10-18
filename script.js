@@ -74,3 +74,55 @@ function saveTasks() {
     saveTasks();
     renderTasks();
   }
+  function updateTask(taskId) {
+    const taskToUpdate = tasks.find(task => task.id === taskId); 
+    const modal = document.createElement('div');
+    modal.classList.add('update-modal');
+    modal.innerHTML = `
+      <div class="modal-content">
+        <h2>Update Task</h2>
+        <p >Task name</p>
+        <input type="text" id="updateTaskName" value="${taskToUpdate.text}" placeholder="Task Name">
+        <p >Description </p>
+        <textarea id="updateTaskDescription" placeholder="Task Description">${taskToUpdate.description}</textarea>
+        <div class="modal-actions">
+          <button onclick="saveTaskUpdate('${taskId}')">Save</button>
+          <button onclick="closeUpdateModal()">Cancel</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+  function saveTaskUpdate(taskId) {
+    const newTaskText = document.getElementById('updateTaskName').value.trim();
+    const newDescription = document.getElementById('updateTaskDescription').value.trim();
+    
+    if (newTaskText !== '') {
+      tasks = tasks.map(task => {
+        if (task.id === taskId) {
+          return { 
+            ...task, 
+            text: newTaskText,
+            description: newDescription
+          };
+        }
+        return task;
+      });
+      saveTasks();
+      renderTasks();
+      closeUpdateModal();
+    }
+  }
+  
+  function closeUpdateModal() {
+    const modal = document.querySelector('.update-modal');
+    if (modal) {
+      modal.remove();
+    }
+  }
+  
+  function deleteTask(taskId) {
+    tasks = tasks.filter(task => task.id !== taskId);
+    saveTasks();
+    renderTasks();
+  }
