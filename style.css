@@ -111,25 +111,28 @@ body {
     max-height: 200px; 
   }
   .task-text {
-    font-size: 18px;
+    font-size: 20px;
     color: #333;
     font-weight: 600;
     margin-bottom: 10px;
     display: block;
     word-wrap: break-word; 
+    margin-top: 10px;
   }
   
   .task-description {
-    font-size: 14px;
+    font-size: 15px;
     color: #666;
     margin-bottom: 10px;
     flex-grow: 1;
     word-wrap: break-word; 
+    max-width: 200px;
   } 
   .task-id {
     font-size: 12px;
-    color: #888;
+    color: #000000;
     margin-bottom: 10px;
+    font-weight:bolder;
   }
   .toggle-btn {
     background: none;
@@ -169,12 +172,14 @@ body {
   }
   .task-card.completed .task-text {
     text-decoration: line-through;
-    color: #888;
+    color: #818181;
   }
   .task-card.completed .task-status {
     font-size: 20px;
     font-weight:800;
     color: green;
+    margin-top: 0;
+    margin-bottom: 0;
   
   
   }
@@ -182,12 +187,16 @@ body {
     font-size: 20px;
     font-weight:800;
     color: red;
+    margin-top: 0;
+    margin-bottom: 0;
   
   }
   .task-card.in-progress .task-status {
     font-size: 20px;
     font-weight:800;
     color: orange;
+    margin-top: 0;
+    margin-bottom: 0;
   
   }
   
