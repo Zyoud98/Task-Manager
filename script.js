@@ -32,3 +32,35 @@ function addTask() {
 function saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }
+
+  function renderTasks(filteredTasks = tasks) {
+    const taskList = document.getElementById('taskList');
+    taskList.innerHTML = '';
+  
+    filteredTasks.forEach((task) => {
+      const card = document.createElement('div');
+      card.classList.add('task-card', task.status);
+      if (task.completed) {
+        card.classList.add('completed'); 
+      }
+      
+      card.innerHTML = `
+        <div class="task-content">
+          <button class="toggle-btn" onclick="toggleComplete('${task.id}')">${task.completed ? '&check;' : '&#8987;'}</button>
+          <div class="task-details">
+            <span class="task-text" title="${task.text}">${task.text}</span>
+            <p class="task-description" title="${task.description}">${task.description}</p>
+            <p class="task-status">${task.status} </p>
+            <p class="task-id">ID: ${task.id}</p>
+          </div>
+        </div>
+        <div class="task-actions">
+          <button class="update-btn" onclick="updateTask('${task.id}')">Update</button>
+          <button class="delete-btn" onclick="deleteTask('${task.id}')">Delete</button>
+        </div>
+      `;
+  
+      taskList.appendChild(card);
+    });
+  }
+
