@@ -126,3 +126,24 @@ function saveTasks() {
     saveTasks();
     renderTasks();
   }
+  function searchTasks() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const filteredTasks = tasks.filter(task => 
+      task.text.toLowerCase().includes(searchInput) );
+    renderTasks(filteredTasks);
+  }
+  
+  function selectTask() {
+    const selectInput = document.getElementById('selectInput');
+    const taskId = selectInput.value.trim();
+    const selectedTask = tasks.find(task => task.id === taskId);
+    
+    if (selectedTask) {
+      renderTasks([selectedTask]);
+    } else {
+      alert('Task not found');
+      renderTasks();
+    }
+    
+    selectInput.value = '';
+  }
